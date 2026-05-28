@@ -2,7 +2,6 @@
 
 This repository contains code and data for discovering governing partial differential equations from multiple data sources. The method trains neural-network surrogates for several cases, builds candidate PDE libraries through a genetic search, and then refines the selected terms with coefficient-variation-based PIC selection.
 
-The upload-ready implementation is in `Upload_version`.
 
 ## What This Project Does
 
@@ -22,14 +21,14 @@ The main steps are:
 
 | Path | Description |
 | --- | --- |
-| `Upload_version/Discovery_from_multicase.py` | Main 1D multicase discovery script for Burgers, KdV, Allen-Cahn, Klein-Gordon, mixed, and wave-breaking datasets. |
-| `Upload_version/Discovery_from_multicase_2D.py` | 2D multicase discovery script for pollutant transport and irregular Poisson data. |
-| `Upload_version/Discovery_from_multicase_3D.py` | 3D multicase discovery script for heat-equation data. |
-| `Upload_version/MTL_GA.py` | Core 1D neural-network, derivative, library, training, fitness, and genetic-search utilities. |
-| `Upload_version/MTL_GA_2D.py` | 2D version of the core utilities. |
-| `Upload_version/MTL_GA_3D.py` | 3D version of the core utilities. |
-| `Upload_version/Burgers_example.ipynb` | Lightweight Burgers example notebook with optional pretraining, genetic search, and PIC selection cells. |
-| `Upload_version/Poisson_IC_example.ipynb` | Lightweight Poisson example notebook with optional pretraining, genetic search, and PIC selection cells. |
+| `code/Discovery_from_multicase.py` | Main 1D multicase discovery script for Burgers, KdV, Allen-Cahn, Klein-Gordon, mixed, and wave-breaking datasets. |
+| `code/Discovery_from_multicase_2D.py` | 2D multicase discovery script for pollutant transport and irregular Poisson data. |
+| `code/Discovery_from_multicase_3D.py` | 3D multicase discovery script for heat-equation data. |
+| `code/MTL_GA.py` | Core 1D neural-network, derivative, library, training, fitness, and genetic-search utilities. |
+| `code/MTL_GA_2D.py` | 2D version of the core utilities. |
+| `code/MTL_GA_3D.py` | 3D version of the core utilities. |
+| `code/Burgers_example.ipynb` | Lightweight Burgers example notebook with optional pretraining, genetic search, and PIC selection cells. |
+| `codePoisson_IC_example.ipynb` | Lightweight Poisson example notebook with optional pretraining, genetic search, and PIC selection cells. |
 | `data/` | Datasets used by the experiments. See `data/README.md`. |
 | `model_save/` | Generated neural-network checkpoints. |
 | `result_save/` | Generated genetic-search caches, selected genomes, and final discovered equations. |
@@ -96,7 +95,7 @@ The scripts use configuration variables near the top of each file.
 
 ### 1D examples
 
-Edit `Upload_version/Discovery_from_multicase.py`:
+Edit `code/Discovery_from_multicase.py`:
 
 ```python
 prefix = 'Burgers_IC'
@@ -121,7 +120,7 @@ Supported `mode` values:
 
 ### 2D examples
 
-Edit `Upload_version/Discovery_from_multicase_2D.py`:
+Edit `code/Discovery_from_multicase_2D.py`:
 
 ```python
 prefix = 'Poisson_IC'
@@ -135,12 +134,12 @@ seed = 42
 Then run:
 
 ```bash
-python Upload_version/Discovery_from_multicase_2D.py
+python code/Discovery_from_multicase_2D.py
 ```
 
 ### 3D examples
 
-Edit `Upload_version/Discovery_from_multicase_3D.py`:
+Edit `code/Discovery_from_multicase_3D.py`:
 
 ```python
 prefix = 'Heat_3D'
@@ -204,7 +203,7 @@ During a successful run, the console prints:
    pip install -r requirements.txt
    ```
 
-2. Open `Upload_version/Burgers_example.ipynb`.
+2. Open `code/Burgers_example.ipynb`.
 
 3. Run the loading and splitting cells.
 
