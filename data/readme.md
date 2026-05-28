@@ -10,13 +10,10 @@ This folder contains the multi-source datasets used by the PDE discovery example
 | `KdV_equation` | 7 | MAT | `KDV_PARA_RK4_CFD6.uu`, `tt`, `x` | `Discovery_from_multicase.py` |
 | `Allen_Cahn_equation` | 7 | MAT | `usol`, `t`, `x`, optional initial-condition metadata | `Discovery_from_multicase.py` |
 | `KG_equation` | 7 | MAT | `usol`, `t`, `x`, optional initial-condition metadata | `Discovery_from_multicase.py` |
-| `Mixed_equation` | 7 | MAT | Six KdV cases plus one Allen-Cahn case | `Discovery_from_multicase.py` |
 | `Poisson_2D_irregular` | 7 | MAT | `data`, columns `[x, y, t, u]` | `Discovery_from_multicase_2D.py`, `Poisson_IC_example.ipynb` |
 | `Pollutant_transport` | 7 | MAT | `c_save`, `x`, `y`, `t_save` | `Discovery_from_multicase_2D.py` |
 | `Heat_3D` | 7 | MAT | `u_save`, `x`, `y`, `z`, `t_save` | `Discovery_from_multicase_3D.py` |
 | `Flow_2D_hetero_KLE_CN` | 7 | MAT | `h`, `u`, `K`, `x`, `y`, `t`, `xi`, `Ss` | heterogeneous 2D flow experiments |
-| `Wave_breaking_data` | 1 | PKL | dictionary of irregular point clouds; each array has columns `[t, x, u]` | wave-breaking experiments |
-| `Wave_equation` | 1 | MAT | `u`, `x`, `y`, `t` | 2D wave-equation experiments |
 
 ## Dataset Notes
 
@@ -55,10 +52,6 @@ Each file is named `KG_IC{i}.mat`. The main fields are:
 - `ic`, `ic_name`: optional initial-condition metadata
 
 The default left-hand side for this dataset is `utt`.
-
-### `Mixed_equation`
-
-This folder mixes equation families in one multi-source experiment. It contains `KDV_IC1.mat` through `KDV_IC6.mat` and `Allen_Cahn_IC7.mat`.
 
 ### `Poisson_2D_irregular`
 
@@ -100,22 +93,6 @@ Each file is named `GW2D_case{i}.mat`. The dataset contains 2D heterogeneous flo
 - `xi`, `Ss`: case parameters
 
 The `figures` subfolder contains quick-look visualizations for each case.
-
-### `Wave_breaking_data`
-
-The file `wave_breaking_data.pkl` stores a dictionary of wave-breaking cases. Each value is an irregular point cloud with columns:
-
-- `t`
-- `x`
-- `u`
-
-### `Wave_equation`
-
-The file `Wave2D_IC1.mat` stores a 2D wave-equation dataset:
-
-- `u`: solution array with shape `(Nt, Nx, Ny)`
-- `x`, `y`: spatial grids
-- `t`: time grid
 
 ## Loading Conventions
 
