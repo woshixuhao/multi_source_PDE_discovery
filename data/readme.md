@@ -1,6 +1,6 @@
 # Data Description
 
-This folder contains the multi-source datasets used by the PDE discovery examples and scripts. Most datasets provide seven cases with different initial conditions or physical settings. Each case is loaded by the scripts in `Upload_version`.
+This folder contains the multi-source datasets used by the PDE discovery examples and scripts. Most datasets provide seven cases with different initial conditions or physical settings. Each case is loaded by the scripts.
 
 ## Dataset Summary
 
